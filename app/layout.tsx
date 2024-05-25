@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import { QueryProvider } from '@/providers/query-provider';
+import { SheetProvider } from '@/providers/sheet-provider';
 
 import './globals.css';
 
@@ -22,7 +23,10 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang='en'>
         <body className={inter.className}>
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            <SheetProvider />
+            {children}
+          </QueryProvider>
         </body>
       </html>
     </ClerkProvider>
