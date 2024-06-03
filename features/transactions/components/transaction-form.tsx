@@ -3,6 +3,7 @@ import { Trash } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { DatePicker } from '@/components/date-picker';
 import { Select } from '@/components/select';
 import { Button } from '@/components/ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
@@ -63,6 +64,21 @@ export const TransactionForm = ({
   return (
     <Form {...form}>
       <form className='space-y-4 pt-4' onSubmit={form.handleSubmit(handleSubmit)}>
+        <FormField
+          name='date'
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <DatePicker
+                  value={field.value}
+                  onChange={field.onChange}
+                  disabled={field.disabled}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
         <FormField
           name='accountId'
           control={form.control}
