@@ -11,6 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { client } from '@/lib/hono';
 import { formatCurrency } from '@/lib/utils';
 import { AccountColumn } from './account-column';
+import { Actions } from './actions';
 import { CategoryColumn } from './category-column';
 
 export type ResponseType = InferResponseType<typeof client.api.transactions.$get, 200>['data'][0];
@@ -128,5 +129,9 @@ export const columns: ColumnDef<ResponseType>[] = [
     cell: ({ row }) => {
       return <AccountColumn account={row.original.account} accountId={row.original.accountId} />;
     },
+  },
+  {
+    id: 'actions',
+    cell: ({ row }) => <Actions id={row.original.id} />,
   },
 ];
