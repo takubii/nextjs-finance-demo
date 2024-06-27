@@ -10,6 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { client } from '@/lib/hono';
 import { formatCurrency } from '@/lib/utils';
+import { AccountColumn } from './account-column';
+import { CategoryColumn } from './category-column';
 
 export type ResponseType = InferResponseType<typeof client.api.transactions.$get, 200>['data'][0];
 
@@ -61,7 +63,13 @@ export const columns: ColumnDef<ResponseType>[] = [
       );
     },
     cell: ({ row }) => {
-      return <span>{row.original.category}</span>;
+      return (
+        <CategoryColumn
+          id={row.original.id}
+          category={row.original.category}
+          categoryId={row.original.categoryId}
+        />
+      );
     },
   },
   {
@@ -118,7 +126,7 @@ export const columns: ColumnDef<ResponseType>[] = [
       );
     },
     cell: ({ row }) => {
-      return <span>{row.original.account}</span>;
+      return <AccountColumn account={row.original.account} accountId={row.original.accountId} />;
     },
   },
 ];
