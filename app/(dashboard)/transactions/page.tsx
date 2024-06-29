@@ -79,8 +79,8 @@ const TransactionsPage = () => {
       <Card className='border-none drop-shadow-sm'>
         <CardHeader className='gap-y-2 lg:flex-row lg:items-center lg:justify-between'>
           <CardTitle className='text-xl line-clamp-1'>Transaction History</CardTitle>
-          <div className='flex items-center gap-x-2'>
-            <Button size='sm' onClick={newTransaction.onOpen}>
+          <div className='flex flex-col lg:flex-row items-center gap-x-2 gap-y-2'>
+            <Button size='sm' className='w-full lg:w-auto' onClick={newTransaction.onOpen}>
               Add new
               <Plus className='size-4 mr-2' />
             </Button>
