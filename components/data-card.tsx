@@ -3,7 +3,7 @@ import { IconType } from 'react-icons';
 
 import { CountUp } from '@/components/count-up';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn, formatCurrency } from '@/lib/utils';
+import { cn, formatCurrency, formatPercentage } from '@/lib/utils';
 
 const boxVariant = cva('rounded-md p-3 shrink-0', {
   variants: {
@@ -74,6 +74,15 @@ export const DataCard = ({
             formattingFn={formatCurrency}
           />
         </h1>
+        <p
+          className={cn(
+            'text-muted-foreground text-sm line-clamp-1',
+            percentageChange > 0 && 'text-emerald-500',
+            percentageChange < 0 && 'text-rose-500'
+          )}
+        >
+          {formatPercentage(percentageChange)} from last period
+        </p>
       </CardContent>
     </Card>
   );
