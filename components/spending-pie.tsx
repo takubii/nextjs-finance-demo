@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/select';
 
 import { PieVariant } from '@/components/pie-variant';
+import { RadarVariant } from '@/components/radar-variant';
 
 type Props = {
   data?: {
@@ -65,7 +66,10 @@ export const SpendingPie = ({ data = [] }: Props) => {
             <p className='text-muted-foreground text-sm'>No data for this period</p>
           </div>
         ) : (
-          <>{chartType === 'pie' && <PieVariant data={data} />}</>
+          <>
+            {chartType === 'pie' && <PieVariant data={data} />}
+            {chartType === 'radar' && <RadarVariant data={data} />}
+          </>
         )}
       </CardContent>
     </Card>
