@@ -1,8 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+Clerk のアカウントを作成し、`CLERK_PUBLISHABLE_KEY`と`CLERK_SECRET_KEY`を取得してください。
+Neon のアカウントを作成し、`DATABASE_URL`を取得してください。
+それらを`.env.example`に記載し、ファイル名を`.env.local`に変えてください。
+その後、以下のコマンドを入力するとローカルで起動できます。
 
 ```bash
 npm run dev
@@ -14,23 +15,20 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[http://localhost:3000](http://localhost:3000)をブラウザで開くことで確認することができます。
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+このプログラムは[こちらの動画](https://www.youtube.com/watch?v=N_uNKAus0II)を参考に作成しました。
+技術スタックを大まかに以下の構成です。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js: https://nextjs.org/
+- Hono: https://hono.dev/
+- Drizzle ORM: https://orm.drizzle.team/
+- shadcn/ui: https://ui.shadcn.com/
+- tanstack: https://tanstack.com/
+- zod
+- zustand
+- TypeScript
+- Clerk: https://clerk.com/
+- Neon DB: https://neon.tech/
